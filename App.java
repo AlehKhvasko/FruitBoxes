@@ -15,14 +15,16 @@ public class App {
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
-        System.out.println(appleBox1.compareTo(orangeBox));
+        //implementing compareTo method
+        appleBox1.compareBoxes(orangeBox);
+        appleBox1.compareBoxes(appleBox);
         //Add fruitBoxes into main Box
         FruitBoxes mainBox = new FruitBoxes();
         mainBox.addBoxOfFruit(appleBox);
         mainBox.addBoxOfFruit(appleBox1);
         mainBox.addBoxOfFruit(orangeBox);
-        mainBox.displayBoxes();
         //Display Boxes
+        mainBox.displayBoxes();
     }
 
 

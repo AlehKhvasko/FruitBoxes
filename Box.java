@@ -39,7 +39,16 @@ public class Box <T extends Fruit>  implements Comparable<Box<?>>  {
         return totalWeight;
     }
 
-
+    public void compareBoxes(Box<?> box){
+        int result = compareTo(box);
+        if (result > 0){
+            System.out.println(this.getName() + " is greater.");
+        } else if (result == 0){
+            System.out.println(this.getName() + " is equal.");
+        } else if (result < 0){
+            System.out.println(this.getName() + " is less.");
+        }
+    }
 
     @Override
     public int compareTo(Box<?> other) {
