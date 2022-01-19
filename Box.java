@@ -18,8 +18,10 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
         fruits.add(fruit);
     }
 
-    //public void toEmptyBox(Box<T> box) {
-    //}
+    public void toSprinkleBox(Box<T> box) {
+        fruits.addAll(box.fruits);
+        box.fruits.clear();
+    }
 
     @Override
     public int compareTo(Box<?> other) {

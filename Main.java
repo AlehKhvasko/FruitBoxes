@@ -24,12 +24,14 @@ public class Main {
         list.add(appleBox1);
         list.add(orangeBox);
         Collections.sort(list, byFruitCount);
+        appleBox.toSprinkleBox(appleBox1);
+        Collections.sort(list, byFruitCount);
     }
 
     public static Comparator<? super Box<?>> byFruitCount = new Comparator<>() {
         @Override
         public int compare(Box<?> o1, Box<?> o2) {
-            return o1.getFruitCount() - o2.getFruitCount();
+            return o2.getFruitCount() - o1.getFruitCount();
         }
     };
 
