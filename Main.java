@@ -1,6 +1,11 @@
 package projectsHandsOn.generics.BoxOfFruits;
 
-public class App {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Main {
     public static void main(String[] args) {
         Box<Apple> appleBox = new Box();
         appleBox.addFruit(new Apple());
@@ -10,22 +15,25 @@ public class App {
         appleBox.addFruit(new Apple());
         Box<Apple> appleBox1 = new Box();
         appleBox1.addFruit(new Apple());
-        System.out.println(appleBox.getWeight());
         Box<Orange> orangeBox = new Box<>();
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
         //implementing compareTo method
-        appleBox1.compareBoxes(orangeBox);
-        appleBox1.compareBoxes(appleBox);
         //Add fruitBoxes into main Box
-        FruitBoxes mainBox = new FruitBoxes();
-        mainBox.addBoxOfFruit(appleBox);
-        mainBox.addBoxOfFruit(appleBox1);
-        mainBox.addBoxOfFruit(orangeBox);
         //Display Boxes
-        mainBox.displayBoxes();
+        List list = new ArrayList();
+        list.add(appleBox);
+        list.add(appleBox1);
+        list.add(orangeBox);
+        Collections.sort(list, byFruitCount);
     }
 
+    public static Comparator<? super Box<?>> byFruitCount = new Comparator<>() {
+        @Override
+        public int compare(Box<?> o1, Box<?> o2) {
+            return o1.getFruitCount() - o2.getFruitCount();
+        }
+    };
 
 }
