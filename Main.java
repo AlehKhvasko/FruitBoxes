@@ -19,9 +19,6 @@ public class Main {
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
-        //implementing compareTo method
-        //Add fruitBoxes into main Box
-        //Display Boxes
         List list = new ArrayList();
         list.add(appleBox);
         list.add(appleBox1);
