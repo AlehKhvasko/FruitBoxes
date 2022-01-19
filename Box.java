@@ -1,18 +1,10 @@
 package projectsHandsOn.generics.BoxOfFruits;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
 public class Box<T extends Fruit> implements Comparable<Box<?>> {
     private ArrayList<T> fruits = new ArrayList<>();
-
-    public ArrayList<T> getFruits() {
-        return fruits;
-    }
-
-    public void setFruits(ArrayList<T> fruits) {
-        this.fruits = fruits;
-    }
 
     public int getFruitCount() {
         return fruits.size();
@@ -31,15 +23,10 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
         box.fruits.clear();
     }
 
-    /*
-
-    TODO How to clone an array and modify it with switched items???
-    FIXME fix items:
-    - Type of array
-
-    */
-
-    public static void switchItems(Box<?> fruits){
+    public static <T>  void swapItems(List fruitsArray, int firstIndex, int secondIndex) {
+        T temp = (T) fruitsArray.get(firstIndex);
+        fruitsArray.set(firstIndex, fruitsArray.get(secondIndex));
+        fruitsArray.set(secondIndex, temp);
     }
 
     @Override
@@ -47,3 +34,7 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
         return Double.compare(getTotalWeight(), other.getTotalWeight());
     }
 }
+
+
+
+

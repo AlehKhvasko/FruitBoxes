@@ -6,8 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Warehouse {
-    private final List fruitStorage = new ArrayList<>();
-
+    private List fruitStorage = new ArrayList<>();
     public void storeBox(Box fruit){
         try {
             if (fruit.getFruitCount() <= 0){
