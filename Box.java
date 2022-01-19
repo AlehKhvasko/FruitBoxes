@@ -35,19 +35,11 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
 
     TODO How to clone an array and modify it with switched items???
     FIXME fix items:
-    - Custom exception!
     - Type of array
 
     */
 
     public static void switchItems(Box<?> fruits){
-        Scanner sc = new Scanner(System.in);
-        int firstIndex = sc.nextInt();
-        int secondIndex = sc.nextInt();
-        Fruit item =fruits.getFruits().get(firstIndex);
-        if (item != null){
-        //    ArrayList<T> temp = fruits.getFruits().clone();
-        }
     }
 
     @Override

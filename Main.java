@@ -33,6 +33,7 @@ public class Main {
             fruitDeli.storeBox(appleBox1);
             fruitDeli.storeBox(orangeBox);
             fruitDeli.storeBox(kiwiBox);
+            fruitDeli.sortByCount();
     }
 
 

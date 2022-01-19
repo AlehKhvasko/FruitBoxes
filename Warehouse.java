@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Warehouse<T extends Box> {
-    private final List<T> fruitStorage = new ArrayList<>();
+public class Warehouse {
+    private final List fruitStorage = new ArrayList<>();
 
-    public void storeBox(T fruit){
+    public void storeBox(Box fruit){
         try {
             if (fruit.getFruitCount() <= 0){
                 throw new EmptyWeightException("Not enough fruits in a Box");
@@ -22,13 +22,13 @@ public class Warehouse<T extends Box> {
     }
 
     public void sortByCount(){
-        Collections.sort(fruitStorage);
+        Collections.sort(fruitStorage, byFruitCount);
     }
 
     public static Comparator<? super Box<?>> byFruitCount = new Comparator<>() {
         @Override
         public int compare(Box<?> o1, Box<?> o2) {
-            return o2.getFruitCount() - o1.getFruitCount();
+            return o1.getFruitCount() - o2.getFruitCount();
         }
     };
 }
