@@ -1,10 +1,18 @@
 package projectsHandsOn.generics.BoxOfFruits;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Box<T extends Fruit> implements Comparable<Box<?>> {
+    private ArrayList<T> fruits = new ArrayList<>();
 
-    private final ArrayList<T> fruits = new ArrayList<>();
+    public ArrayList<T> getFruits() {
+        return fruits;
+    }
+
+    public void setFruits(ArrayList<T> fruits) {
+        this.fruits = fruits;
+    }
 
     public int getFruitCount() {
         return fruits.size();
@@ -21,6 +29,25 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
     public void toSprinkleBox(Box<T> box) {
         fruits.addAll(box.fruits);
         box.fruits.clear();
+    }
+
+    /*
+
+    TODO How to clone an array and modify it with switched items???
+    FIXME fix items:
+    - Custom exception!
+    - Type of array
+
+    */
+
+    public static void switchItems(Box<?> fruits){
+        Scanner sc = new Scanner(System.in);
+        int firstIndex = sc.nextInt();
+        int secondIndex = sc.nextInt();
+        Fruit item =fruits.getFruits().get(firstIndex);
+        if (item != null){
+        //    ArrayList<T> temp = fruits.getFruits().clone();
+        }
     }
 
     @Override

@@ -8,31 +8,33 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Box<Apple> appleBox = new Box();
-        appleBox.addFruit(new Apple());
-        appleBox.addFruit(new Apple());
-        appleBox.addFruit(new Apple());
-        appleBox.addFruit(new Apple());
-        appleBox.addFruit(new Apple());
+            appleBox.addFruit(new Apple());
+            appleBox.addFruit(new Apple());
+            appleBox.addFruit(new Apple());
+            appleBox.addFruit(new Apple());
+            appleBox.addFruit(new Apple());
+
         Box<Apple> appleBox1 = new Box();
-        appleBox1.addFruit(new Apple());
+            appleBox1.addFruit(new Apple());
+
         Box<Orange> orangeBox = new Box<>();
-        orangeBox.addFruit(new Orange());
-        orangeBox.addFruit(new Orange());
-        orangeBox.addFruit(new Orange());
-        List list = new ArrayList();
-        list.add(appleBox);
-        list.add(appleBox1);
-        list.add(orangeBox);
-        Collections.sort(list, byFruitCount);
-        appleBox.toSprinkleBox(appleBox1);
-        Collections.sort(list, byFruitCount);
+            orangeBox.addFruit(new Orange());
+            orangeBox.addFruit(new Orange());
+            orangeBox.addFruit(new Orange());
+        Box<Kiwi> kiwiBox = new Box<>();
+            kiwiBox.addFruit(new Kiwi());
+            kiwiBox.addFruit(new Kiwi());
+            kiwiBox.addFruit(new Kiwi());
+            kiwiBox.addFruit(new Kiwi());
+
+        Warehouse fruitDeli = new Warehouse();
+            fruitDeli.storeBox(appleBox);
+            //appleBox.toSprinkleBox(appleBox1);
+            fruitDeli.storeBox(appleBox1);
+            fruitDeli.storeBox(orangeBox);
+            fruitDeli.storeBox(kiwiBox);
     }
 
-    public static Comparator<? super Box<?>> byFruitCount = new Comparator<>() {
-        @Override
-        public int compare(Box<?> o1, Box<?> o2) {
-            return o2.getFruitCount() - o1.getFruitCount();
-        }
-    };
+
 
 }
